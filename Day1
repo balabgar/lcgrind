@@ -105,7 +105,7 @@ class Solution {
     }
 }
 
-//6. Insert binary tree
+//6. Insert the binary tree
 
 /**
  * Definition for a binary tree node.
