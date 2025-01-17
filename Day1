@@ -265,3 +265,29 @@ class Solution {
         return Math.max(leftHeight, rightHeight) + 1;
     }
 }
+
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        if (head == null || head.next == null) {
+            return false; // No cycle if the list is empty or has only one node
+        }
+
+        // Two pointers: slow and fast
+        ListNode slow = head;
+        ListNode fast = head;
+
+        // Fast pointer moves two steps at a time, slow pointer moves one step at a time
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+
+            // If they meet, there's a cycle
+            if (slow == fast) {
+                return true;
+            }
+        }
+
+        // If the fast pointer reaches the end of the list, there's no cycle
+        return false;
+    }
+}
